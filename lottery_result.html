@@ -1,0 +1,189 @@
+<!-- 签到抽奖页面 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>抽奖结果</title>
+        <meta name="renderer" content="webkit">
+        <style type="text/css">
+
+            body{
+                font-size: 30px;
+                font-weight: bold;
+                background-color:#04040e;
+                opacity: 0.9; 
+                font-family: 'Microsoft YaHei','KaiTi_GB2312',sans-serif !important;
+            }
+
+            .col{
+                position: relative;
+                min-height: 1px;
+                float:left;
+                width: 100%;
+            }
+
+            .container-fluid{
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            .content{
+                width: 80%;
+                margin-left: 10%;
+            }
+            .result_wrapper{
+                padding-top: 6%;
+                position: relative;
+            }
+
+            .title{
+                background-color: rgba(255, 255, 255, 0.86);
+                color:#3a6e83;
+                text-align: center;
+                font-size: 45px;
+                letter-spacing: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .prize{
+                background-color: rgba(255, 255, 255, 0.44);
+                padding-top:20px;
+                text-align: center;
+            }
+
+        
+            img{
+                width: 100%;
+                position: absolute;
+            }
+
+            .footer {
+                font-size: 30px;
+                color: #fff;
+                height: 120px;
+                line-height: 90px;
+                padding-top: 30px;
+            }
+
+            .footer a{
+                color: #fff;
+            }
+
+            /*新增*/
+
+            .back_wrapper{
+                height:100px;
+                width:100px;
+                border-radius: 50%;
+                background-color: rgba(253, 248, 248, 0.45);
+                text-align: center;
+                margin-left: 5%;
+            }
+
+            .back{
+                font-size: 60px;
+                height: 100px;
+                line-height: 100px;
+            }
+
+            .back a{
+                text-decoration: none;
+            }
+
+            .clear_up .back{
+                font-size: 32px;
+            }
+
+            .clear_up {
+                margin-left: 1%;
+                cursor: pointer;
+            }
+
+            .tel{
+                font-size: 20px;
+                height: 52px;
+                line-height: 45px;
+            }
+
+            .prize_type{
+                width: 20%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            .prizer{
+                width: 80%;
+            }
+
+        </style>
+    </head>
+  <body>
+        <img src="img/bg.jpg">
+        <div class="container-fluid result_wrapper">
+
+             <div class="col content">
+                <div class="col title"> 
+                    <div class="list">获奖名单</div>
+                </div> 
+
+                <div class="col prize " style="padding-top:50px">
+                        <div class="col prize_type">一等奖</div>
+
+                        <div class="col first prizer">
+                        </div>
+                </div>
+
+                <div class="col prize ">
+                        <div class="col prize_type">二等奖</div>
+                        
+                        <div class="col second prizer">
+                        </div>
+                </div>
+
+                <div class="col prize" style="padding-bottom:50px">
+                        <div class="col prize_type">三等奖</div>
+
+                        <div class="col third prizer">
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="col footer">
+                <div class="col back_wrapper">
+                    <div class="back">
+                        <a href="lottery.html">&larr;</a>
+                    </div>
+               </div>
+
+               <div class="col back_wrapper clear_up">
+                    <div class="back" id="clean">
+                        清空
+                    </div>
+               </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/dataSource.js"></script>
+        <script type="text/javascript" src="js/lottery_res.js"></script>
+        <script type="text/javascript">
+
+            // ldb.clear() 清空数据库
+            // ldb.display() 展示获奖名单
+                ldb.display();
+                $('#clean').on('click',function(){
+                    ldb.clear();
+                    $('.first').text('');
+                    $('.second').text('');
+                    $('.third').text('');
+                });
+        
+
+        </script>
+
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+        <title>抽奖</title>
+        <link rel="stylesheet" href="css/lottery.css">
+        <style type="text/css">
+        </style>
+    </head>
+<body>
+    <div id="wrapper">
+        <div id="loader"> 
+            <div class="inner"></div>
+        </div>
+        <!-- Awards panel -->
+        <aside class="zone-container">
+            <div class="trigger">
+                <i class="icon icon-filter"></i>
+            </div>
+        </aside>
+        
+        <section id="container" class="clearfix">
+            <div class="html5_video">
+                <img src="img/bg.jpg">
+            </div>
+
+            <div id="copyleft">
+                <div class="favicon">创新企业金融沙龙</div>
+                <!-- <div class="copyright"></div> -->
+                <div class="author">@ echizen</div>
+            </div>
+
+
+            <section id="content" class="clearfix">
+                <!-- <div class="flicker">
+                    <img src="img/truth.jpg" width="150"/>
+                </div> -->
+                <div class="counter-container clearfix">
+                    <div class="counter">
+                        <ul class="prefix"><li>*</li><li>*</li><li>*</li></ul>
+                    </div>
+
+                    <div class="counter">
+                        <ul class="none" >
+                            <li>*</li><li>*</li><li>*</li><li>*</li>
+                        </ul>
+                    </div>
+
+                    <div class="counter">
+                        <ul class="suffix"><li>*</li><li>*</li><li>*</li><li>*</li></ul>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+
+    </div>
+
+    <script type="text/javascript">
+        _static_url = "";
+        _base_url = "";
+    </script>
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/dataSource.js"></script>
+    <script type="text/javascript" src="js/lottery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            lottery = $('body').lottery({
+                awards: 'grateful',
+                prize:{
+                    'first':{ 'nub':2 ,'prize_name':'爱尔威火星车自平衡电动独轮车', 'prize_img':'img/prize1.png'},
+                    'second':{ 'nub':4 ,'prize_name':'福玛特智能扫地清洁机器人', 'prize_img':'img/prize2.png'},
+                    'third':{ 'nub':6 ,'prize_name':'中国台湾进口光觸媒捕蚊器', 'prize_img':'img/prize3.png'},
+                    'grateful':{ 'nub':0 ,'prize_name':'', 'prize_img':''},
+                },
+                default_result: true,
+                default_btn: true,
+                avatar: true,
+                title: '中秋喜抽奖',
+                // customData: true,
+                // dataLoad: function(){
+                    // $.get(_base_url + "server/route.php?c=iphone&m=get_present_list&activity_code=first",function(data){
+                    //     if(data.rowCount > 0){
+                    //         dataSource = JSON.stringify(data.data);
+                    //         window.localStorage.setItem( 'dataSource', dataSource );
+                    //     }else{
+                    //         alert('没有抽奖数据');
+                    //     }
+                    // },'json'); 
+                //}
+            });
+            //$('body').lottery({avatar:true});
+        })
+    </script>
+</body>
+</html>
+
