@@ -35,6 +35,12 @@
      */
 
     $.fn.lottery = function(options){
+        if(this.length == 0) return this;
+
+        if(this.length > 1){
+            this.each(function(){$(this).lottery(options)});
+            return this;
+        }
 
         // 变量定义
         lock = true;
