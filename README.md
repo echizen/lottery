@@ -24,7 +24,7 @@ lottery
 
 ###lottery.html抽奖页面
 `<link href="/css/lottery.css" rel="stylesheet" />`
-`<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>`(2.0以上的jquery文件)  
+`<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>`(建议2.0以上的jquery文件)  
 `<script src="/js/dataSource.js" ></script>` (如果你使用自定义的来自数据库的数据，可以不加载这个js文件)   
 `<script src="/js/lottery.js" ></script>`
 
@@ -126,7 +126,7 @@ options:boolean (true / false)
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.query('18868800000');
 ```
 **latestLucky**
@@ -137,7 +137,7 @@ lottery.query('18868800000');
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lucky = lottery.latestLucky();
 console.log(lucky.tel);
 ```
@@ -151,7 +151,7 @@ console.log(lucky.tel);
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 result_data = lottery.result();
 ```
 
@@ -163,7 +163,7 @@ result_data = lottery.result();
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.delete('18868800000');
 ```
 **deleteLatest**
@@ -174,7 +174,7 @@ lottery.delete('18868800000');
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.deleteLatest();
 ```
 
@@ -186,7 +186,7 @@ lottery.deleteLatest();
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.clear();
 ```
 
@@ -198,7 +198,7 @@ lottery.clear();
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.start();
 ```
 
@@ -211,7 +211,7 @@ lottery.start();
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.stop();
 ```
 
@@ -223,7 +223,7 @@ lottery.stop();
 
 ```
 example:
-lottery = $(body).lottery();
+lottery = $('#lottery').lottery();
 lottery.default_result();
 ```
 
@@ -238,10 +238,13 @@ $(body).lottery({
         dataLoad: function(){
              $.get("yourUrl",function(data){
                 if(data.rowCount > 0){
-                   dataSource = JSON.stringify(data.data);
-                }else{
-                   alert('没有抽奖数据');
-                }
+                            dataSource = data.data;
+                            config.total = dataSource.length;
+                            config.set('dataSource',JSON.stringify(dataSource));
+                            config.reading();
+                        }else{
+                            alert('没有抽奖数据');
+                        }
                 },'json'); 
              }
 });

@@ -8,6 +8,9 @@
         <title>抽奖结果</title>
         <meta name="renderer" content="webkit">
         <style type="text/css">
+            html,body{
+                height: 100%;
+            }
 
             body{
                 font-size: 30px;
@@ -15,6 +18,16 @@
                 background-color:#04040e;
                 opacity: 0.9; 
                 font-family: 'Microsoft YaHei','KaiTi_GB2312',sans-serif !important;
+                margin: 0px;
+            }
+
+            .bg{
+                background-image: url("img/bg.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: 100%;
+                height: 100%;
+                position: fixed;
             }
 
             .col{
@@ -121,8 +134,9 @@
         </style>
     </head>
   <body>
-        <img src="img/bg.jpg">
-        <div class="container-fluid result_wrapper">
+        <!-- <img src="img/bg.jpg"> -->
+        <div class="bg"></div>
+        <div class="result_wrapper">
 
              <div class="col content">
                 <div class="col title"> 

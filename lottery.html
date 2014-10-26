@@ -9,53 +9,55 @@
         </style>
     </head>
 <body>
-    <div id="wrapper">
-        <div id="loader"> 
-            <div class="inner"></div>
-        </div>
-        <!-- Awards panel -->
-        <aside class="zone-container">
-            <div class="trigger">
-                <i class="icon icon-filter"></i>
+    <div id="lottery">
+        <div id="wrapper">
+            <div id="loader"> 
+                <div class="inner"></div>
             </div>
-        </aside>
-        
-        <section id="container" class="clearfix">
-            <div class="html5_video">
-                <img src="img/bg.jpg">
-            </div>
-
-            <div id="copyleft">
-                <div class="favicon">创新企业金融沙龙</div>
-                <!-- <div class="copyright"></div> -->
-                <div class="author">@ echizen</div>
-            </div>
-
-
-            <section id="content" class="clearfix">
-                <!-- <div class="flicker">
-                    <img src="img/truth.jpg" width="150"/>
-                </div> -->
-                <div class="counter-container clearfix">
-                    <div class="counter">
-                        <ul class="prefix"><li>*</li><li>*</li><li>*</li></ul>
-                    </div>
-
-                    <div class="counter">
-                        <ul class="none" >
-                            <li>*</li><li>*</li><li>*</li><li>*</li>
-                        </ul>
-                    </div>
-
-                    <div class="counter">
-                        <ul class="suffix"><li>*</li><li>*</li><li>*</li><li>*</li></ul>
-                    </div>
+            <!-- Awards panel -->
+            <aside class="zone-container">
+                <div class="trigger">
+                    <i class="icon icon-filter"></i>
                 </div>
+            </aside>
+            
+            <section id="container" class="clearfix">
+                <div class="html5_video">
+                    <img src="img/bg.jpg">
+                </div>
+
+                <div id="copyleft">
+                    <div class="favicon">创新企业金融沙龙</div>
+                    <!-- <div class="copyright"></div> -->
+                    <div class="author">@ echizen</div>
+                </div>
+
+
+                <section id="content" class="clearfix">
+                    <!-- <div class="flicker">
+                        <img src="img/truth.jpg" width="150"/>
+                    </div> -->
+                    <div class="counter-container clearfix">
+                        <div class="counter">
+                            <ul class="prefix"><li>*</li><li>*</li><li>*</li></ul>
+                        </div>
+
+                        <div class="counter">
+                            <ul class="none" >
+                                <li>*</li><li>*</li><li>*</li><li>*</li>
+                            </ul>
+                        </div>
+
+                        <div class="counter">
+                            <ul class="suffix"><li>*</li><li>*</li><li>*</li><li>*</li></ul>
+                        </div>
+                    </div>
+                </section>
+
+
             </section>
 
-
-        </section>
-
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -67,7 +69,7 @@
     <script type="text/javascript" src="js/lottery.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            lottery = $('body').lottery({
+            lottery = $('#lottery').lottery({
                 awards: 'grateful',
                 prize:{
                     'first':{ 'nub':2 ,'prize_name':'爱尔威火星车自平衡电动独轮车', 'prize_img':'img/prize1.png'},
@@ -83,12 +85,13 @@
                 // dataLoad: function(){
                     // $.get(_base_url + "server/route.php?c=iphone&m=get_present_list&activity_code=first",function(data){
                     //     if(data.rowCount > 0){
-                    //         dataSource = JSON.stringify(data.data);
-                    //         window.localStorage.setItem( 'dataSource', dataSource );
-                    //     }else{
-                    //         alert('没有抽奖数据');
-                    //     }
-                    // },'json'); 
+                        //     dataSource = data.data;
+                        //     config.total = dataSource.length;
+                        //     config.set('dataSource',JSON.stringify(dataSource));
+                        //     config.reading();
+                        // }else{
+                        //     alert('没有抽奖数据');
+                        // }
                 //}
             });
             //$('body').lottery({avatar:true});

@@ -159,7 +159,6 @@
             }                      
         } 
 
-        config['total'] = dataSource.length;                          
         /* 
          * 加载完毕后执行的事件
          */
@@ -530,7 +529,9 @@
             // },'json'); 
 
             if(settings.customData){
-                settings.dataLoad();
+                settings.dataLoad(config);
+            }else{
+                config['total'] = dataSource.length;    
             }
 
             if(settings.flicker){
@@ -678,6 +679,7 @@
             $('#js_result').fadeIn(4000);
         }
 
+        config['total'] = 0;
         init();
         return this;
     }
