@@ -33,6 +33,9 @@ lottery
 `<script type="text/javascript" src="js/dataSource.js"></script>` (如果你使用自定义的来自数据库的数据，可以不加载这个js文件,但是要保证能获取你的数据，例如在抽奖页面插件初始化时将数据存入到window.localStorage中)   
 `<script type="text/javascript" src="js/lottery_res.js"></script>`
 
+###插件初始化
+请将插件绑定在页面某一包裹它的元素上，如#lottery,也可以直接用lottery.html这个Demo页面，将js里的配置参数改为你需要的。
+
 ##3、API
 ###1.General
 **awards**
@@ -234,7 +237,7 @@ lottery.default_result();
 
 ```
 example:
-$(body).lottery({
+$('#lottery').lottery({
         dataLoad: function(){
              $.get("yourUrl",function(data){
                 if(data.rowCount > 0){
