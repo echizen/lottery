@@ -96,7 +96,9 @@
             query: function( val ) {
                 for(var key in window.localStorage){
                     if( 'first|second|third'.indexOf(key) >= 0 ){
-                        if(config.get( key ).indexOf(val) >= 0){
+                        //if(config.get( key ).indexOf(val) >= 0){
+						var currKeys = config.get( key ).split(",");
+						if($.inArray(val+'', currKeys) >= 0){
                             return true;
                         }
                     }
@@ -631,7 +633,9 @@
 
             for(var key2 in window.localStorage){
                 if( 'first|second|third'.indexOf(key2) >= 0 ){
-                    if(config.get( key2 ).indexOf(index) >= 0){
+                    //if(config.get( key2 ).indexOf(index) >= 0){
+					var currKeys = config.get( key2 ).split(",");
+					if($.inArray(index+'', currKeys) != "-1"){	
                         config.remove(key2, index);
                         break;
                     }
